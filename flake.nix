@@ -164,9 +164,6 @@
             nativeBuildInputs = kernel.moduleBuildDependencies ++ [ pkgs.kmod ];
             buildPhase = ''
               runHook preBuild
-              if ! grep -q '0x6639' btmtk.c; then
-                patch -p3 < ${repoSrc}/mt6639-bt-6.19.patch
-              fi
               echo "obj-m += btusb.o btmtk.o" > Makefile
               make -C ${kernelBuild} M=$(pwd) ${makeFlags} modules
               runHook postBuild
