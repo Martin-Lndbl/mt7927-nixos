@@ -112,7 +112,6 @@
             ];
             patches = [
               "${repoSrc}/mt7902-wifi-6.19.patch"
-              "${repoSrc}/mt6639-wifi-init.patch"
               "${repoSrc}/mt6639-wifi-dma.patch"
             ];
             buildPhase = ''
